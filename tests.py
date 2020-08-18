@@ -20,7 +20,8 @@ class PartyTests(unittest.TestCase):
         self.assertIn(b"Please RSVP", result.data)
         self.assertNotIn(b"Party Details", result.data)
         #b string is a way for the computer to read bytes and look for it
-        # FIXME: Add a test to show we see the RSVP form, but NOT the party details
+        # FIXME: Add a test to show we see the RSVP form, 
+        #but NOT the party details
 
 
     def test_rsvp(self):
@@ -28,10 +29,12 @@ class PartyTests(unittest.TestCase):
                                   data={"name": "Jane",
                                         "email": "jane@jane.com"},
                                   follow_redirects=True)
-     
-        # FIXME: Once we RSVP, we should see the party details, but
-        # not the RSVP form
-        print("FIXME")
+        self.assertIn(b"Yay!", result.data)
+        self.assertIn(b"Party Details", result.data)
+        self.assertNotIn(b"Please RSVP", result.data)
+
+        # FIXME: Once we RSVP, we should see the party details, but 
+        #not the RSVP form
 
 
 class PartyTestsDatabase(unittest.TestCase):
