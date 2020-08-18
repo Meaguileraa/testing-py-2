@@ -37,6 +37,7 @@ class PartyTests(unittest.TestCase):
         #not the RSVP form
 
 
+
 class PartyTestsDatabase(unittest.TestCase):
     """Flask tests that use the database."""
 
