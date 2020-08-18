@@ -23,8 +23,8 @@ def example_data():
 
     game = Game(name="Jumanji",
                 description="Magical jungle-themed adventure game")
-    db.commit(game)
-    db.add()
+    db.session.add(game)
+    db.session.commit()
     # FIXME: write a function that creates a game and adds it to the database.
 
 
